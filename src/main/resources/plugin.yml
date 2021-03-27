@@ -1,0 +1,6 @@
+name: BitsDuels
+version: ${project.version}
+main: me.evilterabite.bitsduels.BitsDuels
+api-version: 1.16
+authors: [ evilterabite ]
+description: Duels server minigame
