@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum Rank {
-    UNRANKED(0, -1, 1,1,ChatColor.DARK_GRAY + "UNRANKED"),
+    UNRANKED(0, -1, 2,2,ChatColor.DARK_GRAY + "UNRANKED"),
     IRON1(1,1, 25,10, ChatColor.DARK_GRAY + "I1"),
     IRON2(2, 100, 20, 10, ChatColor.DARK_GRAY + "I2"),
     IRON3(3, 200, 20, 15, ChatColor.DARK_GRAY + "I3"),
@@ -28,13 +28,14 @@ public enum Rank {
     IMMORTAL(19,1800, 5, 30, ChatColor.RED + "IMMORTAL"),
     RADIANT(20,3000, 3, 30, ChatColor.DARK_PURPLE + "RADIANT");
 
-
+    private final int id;
     private final int eloRequired;
-    private int winAmount;
-    private int loseAmount;
+    private final int winAmount;
+    private final int loseAmount;
     private final String rankPrefix;
 
     Rank(int id, int eloRequired, int winAmount, int loseAmount, String rankPrefix1) {
+        this.id = id;
         this.eloRequired = eloRequired;
         this.winAmount = winAmount;
         this.loseAmount = loseAmount;
@@ -55,6 +56,10 @@ public enum Rank {
 
     public String getRankPrefix() {
         return rankPrefix;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public static Rank assign(BitsPlayer bitsPlayer) {

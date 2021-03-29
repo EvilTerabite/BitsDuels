@@ -1,16 +1,17 @@
 package me.evilterabite.bitsduels;
 
-import me.evilterabite.bitsduels.libraries.BitsPlayer;
-import me.evilterabite.bitsduels.libraries.Rank;
+import me.evilterabite.bitsduels.files.PlayerData;
+import me.evilterabite.bitsduels.libraries.Queue;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BitsDuels extends JavaPlugin {
 
+    public static Queue queue = new Queue(true);
+
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        PlayerData.create();
 
     }
 
