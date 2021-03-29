@@ -42,4 +42,8 @@ public class PlayerJoin implements Listener {
     private boolean joinSpec() {
         return Bukkit.getOnlinePlayers().size() >= 2;
     }
+
+    private void joinAsPlayer(){
+
+    }
 }
